@@ -22,11 +22,12 @@ class FormReservation
     #[ORM\ManyToOne(inversedBy: 'formReservation')]
     private ?Voyage $voyage = null;
 
-    #[ORM\ManyToOne(inversedBy: 'formReservation')]
-    private ?Utilisateur $utilisateur = null;
 
     #[ORM\ManyToOne(inversedBy: 'formReservation')]
     private ?Statut $statut = null;
+
+    #[ORM\ManyToOne(inversedBy: 'formReservation')]
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -69,17 +70,6 @@ class FormReservation
         return $this;
     }
 
-    public function getUtilisateur(): ?Utilisateur
-    {
-        return $this->utilisateur;
-    }
-
-    public function setUtilisateur(?Utilisateur $utilisateur): static
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
 
     public function getStatut(): ?Statut
     {
@@ -89,6 +79,18 @@ class FormReservation
     public function setStatut(?Statut $statut): static
     {
         $this->statut = $statut;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

@@ -43,14 +43,15 @@ class Voyage
     #[ORM\ManyToOne(inversedBy: 'voyages')]
     private ?Categorie $Categorie = null;
 
-    #[ORM\ManyToOne(inversedBy: 'Voyage')]
-    private ?Utilisateur $utilisateur = null;
 
     /**
      * @var Collection<int, formReservation>
      */
     #[ORM\OneToMany(targetEntity: formReservation::class, mappedBy: 'voyage')]
     private Collection $formReservation;
+
+    #[ORM\ManyToOne(inversedBy: 'Voyage')]
+    private ?User $user = null;
 
     public function __construct()
     {
@@ -170,18 +171,6 @@ class Voyage
         return $this;
     }
 
-    public function getUtilisateur(): ?Utilisateur
-    {
-        return $this->utilisateur;
-    }
-
-    public function setUtilisateur(?Utilisateur $utilisateur): static
-    {
-        $this->utilisateur = $utilisateur;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, formReservation>
      */
@@ -208,6 +197,18 @@ class Voyage
                 $formReservation->setVoyage(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }
