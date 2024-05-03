@@ -61,7 +61,7 @@ class VoyageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', "Le voyage a été mis à jour.");
+            $this->addFlash('success', "Le voyage a été mise à jour.");
             return $this->redirectToRoute('app_voyage_index', [], Response::HTTP_SEE_OTHER);
         }
 

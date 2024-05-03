@@ -61,7 +61,7 @@ class PaysController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', "Le pays a été mis à jour.");
+            $this->addFlash('success', "Le pays a été mise à jour.");
             return $this->redirectToRoute('app_pays_index', [], Response::HTTP_SEE_OTHER);
         }
 
