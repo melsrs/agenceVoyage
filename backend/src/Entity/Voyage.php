@@ -19,8 +19,8 @@ class Voyage
     #[ORM\Column(length: 100)]
     private ?string $nom = null;
 
-    #[ORM\Column(type: Types::OBJECT)]
-    private ?object $image = null;
+    #[ORM\Column(length: 100)]
+    private ?string $image = null;
 
     #[ORM\Column]
     private ?int $prix = null;
@@ -75,12 +75,12 @@ class Voyage
         return $this;
     }
 
-    public function getImage(): ?object
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(object $image): static
+    public function setImage(string $image): static
     {
         $this->image = $image;
 
