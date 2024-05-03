@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[Route('/user', name: 'app_user_')]
 class UserController extends AbstractController
 {
-    #[Route('s', name: 'index', methods: ['GET'])]
+    #[Route('s', name: 'index')]
     public function index(UserRepository $userRepository): Response
     {
         return $this->render('user/index.html.twig', [
@@ -35,6 +35,8 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'utilisateur a bien été créé !');
+            
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -71,14 +73,14 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'delete', methods: ['POST'])]
-    public function delete(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    #[Route('/{id}', name: 'delete')]
+    public function delete(User $user, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->getPayload()->get('_token'))) {
+        
             $entityManager->remove($user);
             $entityManager->flush();
-        }
 
+        $this->addFlash('success', 'L\'utilisateur a bien été supprimé');
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
 }
