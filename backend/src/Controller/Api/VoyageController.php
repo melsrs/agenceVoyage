@@ -16,6 +16,6 @@ class VoyageController extends AbstractController
     {
         $voyages = $voyageRepository->findAll();
         
-        return $this->json(data: $voyages, context: ['groups'=> 'api_film_index']);
+        return $this->json(data: $voyages, context: ['groups'=> 'api_voyages_index']);
     }
 }
