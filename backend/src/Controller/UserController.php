@@ -70,7 +70,7 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            $this->addFlash('success', "L'utilisateur a été mise à jour.");
+            $this->addFlash('success', "L'utilisateur a été mis à jour.");
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 

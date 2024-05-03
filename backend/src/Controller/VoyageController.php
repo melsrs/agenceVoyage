@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[Route('/voyage', name: 'app_voyage_')]
 class VoyageController extends AbstractController
 {
-    #[Route('/', name: 'index')]
+    #[Route('s', name: 'index')]
     public function index(VoyageRepository $voyageRepository): Response
     {
         return $this->render('voyage/index.html.twig', [
@@ -61,6 +61,7 @@ class VoyageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            $this->addFlash('success', "Le voyage a été mis à jour.");
             return $this->redirectToRoute('app_voyage_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -75,6 +76,8 @@ class VoyageController extends AbstractController
     {
             $entityManager->remove($voyage);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Le voyage a bien été supprimé');
 
         return $this->redirectToRoute('app_voyage_index', [], Response::HTTP_SEE_OTHER);
     }
