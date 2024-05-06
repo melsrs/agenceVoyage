@@ -15,6 +15,7 @@ class Voyage
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['api_reservations_index'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
