@@ -18,6 +18,7 @@ class Voyage
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups(['api_voyages_index'])]
     private ?string $nom = null;
 
     #[ORM\Column(length: 100)]
@@ -25,24 +26,31 @@ class Voyage
     private ?string $image = null;
 
     #[ORM\Column]
+    #[Groups(['api_voyages_index'])]
     private ?int $prix = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['api_voyages_index'])]
     private ?\DateTimeInterface $datedepart = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups(['api_voyages_index'])]
     private ?\DateTimeInterface $datearrivee = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['api_voyages_index'])]
     private ?string $description = null;
 
     #[ORM\Column(length: 100)]
+    #[Groups(['api_voyages_index'])]
     private ?string $moyentransport = null;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
+    #[Groups(['api_voyages_index'])]
     private ?Pays $Pays = null;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
+    #[Groups(['api_voyages_index'])]
     private ?Categorie $Categorie = null;
 
 
