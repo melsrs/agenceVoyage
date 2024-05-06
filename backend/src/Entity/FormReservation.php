@@ -22,7 +22,6 @@ class FormReservation
     #[ORM\ManyToOne(inversedBy: 'formReservation')]
     private ?Voyage $voyage = null;
 
-
     #[ORM\ManyToOne(inversedBy: 'formReservation')]
     private ?Statut $statut = null;
 
