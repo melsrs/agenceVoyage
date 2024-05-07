@@ -2,9 +2,18 @@ body {
     background-color: #FEADCA;
 }
 
-button {
+/* button {
     background-color: var(--bs-blue);
     color: var(--bs-white); 
     border-color: var(--bs-blue); 
     border-radius: 5px;
+} */
+
+h1 {
+    margin: 0 0 0 15px;
+}
+
+.btn-primary {
+    position: absolute;
+    right: 15px;
 }
