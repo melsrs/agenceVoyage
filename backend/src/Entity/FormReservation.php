@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\FormReservationRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: FormReservationRepository::class)]
 class FormReservation
@@ -15,15 +16,18 @@ class FormReservation
     private ?int $id = null;
 
     #[ORM\Column]
-    #[Groups(['api_reservations_index'])]
+    #[Assert\NotBlank(message: 'Veuillez renseigner le nombre de voyageur.')]
+    #[Groups(['api_reservations_index', 'api_reservation_new'])]
     private ?int $nombreVoyageur = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['api_reservations_index'])]
+    #[Assert\NotBlank(message: 'Veuillez renseigner votre message.')]
+    #[Groups(['api_reservations_index', 'api_reservation_new'])]
     private ?string $message = null;
 
     #[ORM\ManyToOne(inversedBy: 'formReservation')]
-    #[Groups(['api_reservations_index'])]
+    #[Assert\NotBlank(message: 'Veuillez renseigner le voyage.')]
+    #[Groups(['api_reservations_index', 'api_reservation_new'])]
     private ?Voyage $voyage = null;
 
     #[ORM\ManyToOne(inversedBy: 'formReservation')]
