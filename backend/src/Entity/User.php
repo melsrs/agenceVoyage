@@ -17,7 +17,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['api_reservations_index'])]
+    // #[Groups(['api_reservations_index'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
