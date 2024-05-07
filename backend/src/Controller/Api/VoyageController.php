@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
 
-#[Route('/api/voyage', name: 'api_voyage')]
+#[Route('/api/voyage', name: 'api_voyage_')]
 class VoyageController extends AbstractController
 {
     #[Route('s', name: 'index')]
@@ -24,5 +24,11 @@ class VoyageController extends AbstractController
     public function show(Voyage $voyage): Response
     {
         return $this->json(data: $voyage, context: ['groups' => ['api_voyages_index', 'api_voyages_show']]);
+    }
+
+    #[Route('/{nom}', name: 'date')]
+    public function date(Voyage $voyage): Response
+    {
+        return $this->json(data: $voyage, context: ['groups' => ['api_voyages_index', 'api_voyages_show', 'api_voyage_date']]);
     }
 }

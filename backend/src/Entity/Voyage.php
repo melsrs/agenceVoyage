@@ -31,11 +31,11 @@ class Voyage
     private ?int $prix = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['api_voyages_index', 'api_voyages_show'])]
+    #[Groups(['api_voyages_index', 'api_voyages_show', 'api_voyage_date'])]
     private ?\DateTimeInterface $datedepart = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['api_voyages_index', 'api_voyages_show'])]
+    #[Groups(['api_voyages_index', 'api_voyages_show', 'api_voyage_date'])]
     private ?\DateTimeInterface $datearrivee = null;
 
     #[ORM\Column(length: 255)]

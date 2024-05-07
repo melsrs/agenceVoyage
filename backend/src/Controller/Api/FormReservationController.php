@@ -71,5 +71,4 @@ class FormReservationController extends AbstractController
         }
     }
 
-    
 }

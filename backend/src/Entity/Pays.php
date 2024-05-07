@@ -6,18 +6,22 @@ use App\Repository\PaysRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 
+
 #[ORM\Entity(repositoryClass: PaysRepository::class)]
+#[UniqueEntity(fields: 'nom', message:'Ce pays existe déjà.')]
 class Pays
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['api_pays_index'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['api_voyages_index'])]
+    #[Groups(['api_voyages_index', 'api_pays_index', 'api_pays_show'])]
     private ?string $nom = null;
 
     /**
