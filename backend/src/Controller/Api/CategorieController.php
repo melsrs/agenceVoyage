@@ -23,6 +23,6 @@ class CategorieController extends AbstractController
     #[Route('/{nom}', name: 'show')]
     public function show(Categorie $categorie): Response
     {
-        return $this->json(data: $categorie, context: ['groups' => ['api_categories_index', 'api_categories_show']]);
+        return $this->json(data: $categorie, context: ['groups' => ['api_categories_show']]);
     }
 }

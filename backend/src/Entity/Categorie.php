@@ -27,6 +27,7 @@ class Categorie
      * @var Collection<int, Voyage>
      */
     #[ORM\OneToMany(targetEntity: Voyage::class, mappedBy: 'Categorie')]
+    #[Groups(['api_categories_show'])]
     private Collection $voyages;
 
     public function __construct()

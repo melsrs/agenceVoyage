@@ -21,7 +21,7 @@ class Pays
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['api_voyages_index', 'api_pays_index', 'api_pays_show'])]
+    #[Groups(['api_voyages_index', 'api_pays_index', 'api_pays_show', 'api_voyages_show'])]
     private ?string $nom = null;
 
     /**

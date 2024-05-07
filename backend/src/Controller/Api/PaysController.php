@@ -22,6 +22,6 @@ class PaysController extends AbstractController
     #[Route('/{nom}', name: 'show')]
     public function show(Pays $pays): Response
     {
-        return $this->json(data: $pays, context: ['groups' => ['api_pays_index', 'api_pays_show']]);
+        return $this->json(data: $pays, context: ['groups' => 'api_pays_show']);
     }
 }
