@@ -1,19 +1,45 @@
 body {
-    background-color: #FEADCA;
+  background-color: #feadca;
 }
-
-/* button {
-    background-color: var(--bs-blue);
-    color: var(--bs-white); 
-    border-color: var(--bs-blue); 
-    border-radius: 5px;
-} */
 
 h1 {
-    margin: 0 0 0 15px;
+    margin: 15px;
+  }
+
+.identification {
+  width: 60%;
+  margin: auto;
 }
 
+.divButtonIdenfication {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+    background-color: var(--bs-blue);
+    color: var(--bs-white);
+    border-color: var(--bs-blue);
+    border-radius: 10px;
+    padding: 6px;
+  }
+
 .btn-primary {
-    position: absolute;
-    right: 15px;
+  position: absolute;
+  right: 52px;
+}
+
+.btn-success, 
+.btn-danger, 
+.btn-light {
+    margin-left: 59px !important;
+  }
+
+#user {
+    margin: 0 60px 0 60px;
+}
+
+.show {
+    display: flex;
 }
