@@ -3,9 +3,9 @@
 {% block title %}New FormReservation{% endblock %}
 
 {% block body %}
-    <h1>Create new FormReservation</h1>
+    <h1>Créer une nouvelle réservation</h1>
 
     {{ include('form_reservation/_form.html.twig') }}
 
-    <a href="{{ path('app_form_reservation_index') }}">back to list</a>
+    <a href="{{ path('app_form_reservation_index') }}" class="btn btn-primary m-2">Retourner à la liste</a>
 {% endblock %}

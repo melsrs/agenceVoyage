@@ -12,31 +12,33 @@
 		</div>
 	{% endfor %}
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Nom</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for pay in pays %}
+	<div class="table table-hover p-3">
+		<table class="table">
+			<thead>
 				<tr>
-					<td>{{ pay.id }}</td>
-					<td>{{ pay.nom }}</td>
-					<td>
-						<a href="{{ path('app_pays_show', {'id': pay.id}) }}">show</a>
-						<a href="{{ path('app_pays_edit', {'id': pay.id}) }}">edit</a>
-					</td>
+					<th>Id</th>
+					<th>Nom</th>
+					<th>actions</th>
 				</tr>
-			{% else %}
-				<tr>
-					<td colspan="3">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				{% for pay in pays %}
+					<tr>
+						<td>{{ pay.id }}</td>
+						<td>{{ pay.nom }}</td>
+						<td>
+							<a href="{{ path('app_pays_show', {'id': pay.id}) }}" class="btn btn-warning" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .75rem;">show</a>
+							<a href="{{ path('app_pays_edit', {'id': pay.id}) }}" class="btn btn-secondary" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .75rem;">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="3">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 
-	<a href="{{ path('app_pays_new') }}">Create new</a>
+	<a href="{{ path('app_pays_new') }}" class="btn btn-primary">Ajouter un pays</a>
 {% endblock %}

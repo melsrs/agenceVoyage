@@ -12,33 +12,35 @@
 		</div>
 	{% endfor %}
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>NombreVoyageur</th>
-				<th>Message</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for form_reservation in form_reservations %}
+	<div class="table table-hover p-3">
+		<table class="table">
+			<thead>
 				<tr>
-					<td>{{ form_reservation.id }}</td>
-					<td>{{ form_reservation.nombreVoyageur }}</td>
-					<td>{{ form_reservation.message }}</td>
-					<td>
-						<a href="{{ path('app_form_reservation_show', {'id': form_reservation.id}) }}">show</a>
-						<a href="{{ path('app_form_reservation_edit', {'id': form_reservation.id}) }}">edit</a>
-					</td>
+					<th>Id</th>
+					<th>NombreVoyageur</th>
+					<th>Message</th>
+					<th>actions</th>
 				</tr>
-			{% else %}
-				<tr>
-					<td colspan="4">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				{% for form_reservation in form_reservations %}
+					<tr>
+						<td>{{ form_reservation.id }}</td>
+						<td>{{ form_reservation.nombreVoyageur }}</td>
+						<td>{{ form_reservation.message }}</td>
+						<td>
+							<a href="{{ path('app_form_reservation_show', {'id': form_reservation.id}) }}" class="btn btn-warning" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .75rem;">show</a>
+							<a href="{{ path('app_form_reservation_edit', {'id': form_reservation.id}) }}" class="btn btn-secondary" style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .4rem; --bs-btn-font-size: .75rem;">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="4">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 
-	<a href="{{ path('app_form_reservation_new') }}">Create new</a>
+	<a href="{{ path('app_form_reservation_new') }}" class="btn btn-primary">Créer une réservation</a>
 {% endblock %}

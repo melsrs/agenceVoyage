@@ -3,8 +3,8 @@ body {
 }
 
 h1 {
-    margin: 15px;
-  }
+  margin: 15px;
+}
 
 .identification {
   width: 60%;
@@ -18,28 +18,33 @@ h1 {
 }
 
 button {
-    background-color: var(--bs-blue);
-    color: var(--bs-white);
-    border-color: var(--bs-blue);
-    border-radius: 10px;
-    padding: 6px;
-  }
+  background-color: var(--bs-blue);
+  color: var(--bs-white);
+  border-color: var(--bs-blue);
+  border-radius: 10px;
+  padding: 6px;
+}
 
 .btn-primary {
   position: absolute;
   right: 52px;
 }
 
-.btn-success, 
-.btn-danger, 
+.btn-success,
+.btn-danger,
 .btn-light {
-    margin-left: 59px !important;
-  }
+  margin-left: 59px !important;
+}
 
-#user {
-    margin: 0 60px 0 60px;
+#user,
+#voyage,
+#form_reservation,
+#pays,
+#categorie,
+#statut {
+  margin: 0 60px 0 60px;
 }
 
 .show {
-    display: flex;
+  display: flex;
 }
