@@ -25,11 +25,12 @@ export default function Voyages() {
     }
   }, []); // Le tableau vide indique que cet effet ne s'exécute qu'au montage.
 
+
   return (
     <main>
       <Navbar />
       {loading && !error && <div>Données en cours de chargement !</div>}
-      {!loading && !error && data && <VoyageList voayages={data} />}
+      {!loading && !error && data && <VoyageList voyages={data} />}
       {!loading && error && <div>Une erreur est survenue</div>}
     </main>
   );

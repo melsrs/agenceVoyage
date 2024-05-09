@@ -1,3 +1,4 @@
+import "./voyageList.css";
 import VoyageCardTeaser from "../voyageCardTeaser/VoyageCardTeaser.js";
 
 export default function VoyageList(props) {

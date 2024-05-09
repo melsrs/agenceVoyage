@@ -1,4 +1,4 @@
-import "./characterCardTeaser.css";
+import "./voyageCardTeaser.css";
 import Image from "next/image";
 
 export default function VoyageCardTeaser(props) {
