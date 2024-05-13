@@ -37,7 +37,7 @@ class FormReservationController extends AbstractController
          * on appelle le serializer, qui a besoin de la requête, de l'objet à instancer, du format de la requête qu'il va recevoir, et des groupes qu'il va devoir utiliser.
          */
 
-        $reservation = $serializer->deserialize($request->getContent(), FormReservation::class, 'json', ['groups' => 'api_reservations_new']);
+        $reservation = $serializer->deserialize($request->getContent(), FormReservation::class, 'json', ['groups' => 'api_reservation_new']);
 
         /**
          * * 2. Validation des données
