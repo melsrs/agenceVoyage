@@ -18,6 +18,9 @@ export default function VoyageList(props) {
                   nom={voyage.nom}
                   pays={voyage.Pays.nom}
                   image={voyage.image}
+                  prix={voyage.prix}
+                  categorie={voyage.Categorie.nom}
+
                 />
               </li>
             </Link>

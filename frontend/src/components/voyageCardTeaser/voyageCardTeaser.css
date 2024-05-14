@@ -21,13 +21,20 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       font-weight: bold;
-      font-size: 32px;
+      font-size: 28px;
     }
 
     .voyageCardPays {
       margin: 0;
       padding: 0;
       font-size: 24px;
+    }
+
+    .voyageCardPrix,
+    .voyageCardCategorie {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
     }
   }
 }

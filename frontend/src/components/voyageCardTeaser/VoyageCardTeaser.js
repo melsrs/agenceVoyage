@@ -3,14 +3,15 @@
 import "./voyageCardTeaser.css";
 import Image from "next/image";
 
-export default function VoyageCardTeaser({nom,pays,image}) {
+export default function VoyageCardTeaser({nom,pays,image, prix, categorie}) {
   return (
     <div className="voyageCard">
     <div className="voyageCardInformation">
       <p className="voyageCardName">{nom}</p>
       <p className="voyageCardPays">{pays}</p>
-    </div>
-    {image && (
+      <p className="voyageCardPrix">{prix} € </p>
+
+      {image && (
       <img
         className="voyageCardImage"
         width={250}
@@ -19,6 +20,11 @@ export default function VoyageCardTeaser({nom,pays,image}) {
         alt={"Image de " + nom}
       />
     )}
+      <p className="voyageCardCategorie">Catégorie : {categorie}</p>
+    </div>
+
+
+
   </div>
   );
 }

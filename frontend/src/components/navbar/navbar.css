@@ -1,31 +1,31 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 17px 20px;
+  margin: 0 0 40px 0;
+
+  .logo {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black !important;
+  }
+
+  .navigation {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    padding: 10px 20px;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-    .logo {
-        margin: 0;
-        font-size: 25px;
-        font-weight: bold;
-        text-decoration: none;
-        color: black !important;
+    li > a {
+      font-size: 18px;
+      text-decoration: none;
+      padding: 10px;
+      color: black !important;
     }
-
-    .navigation {
-        display: flex;
-        gap: 30px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        li > a {
-            font-size: 18px;
-            text-decoration: none;
-            padding: 10px; 
-            color: black !important;
-        }
-
-    }
+  }
 }
