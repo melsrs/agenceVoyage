@@ -3,20 +3,20 @@
 import "./voyageCardTeaser.css";
 import Image from "next/image";
 
-export default function VoyageCardTeaser(props) {
+export default function VoyageCardTeaser({nom,pays,image}) {
   return (
     <div className="voyageCard">
     <div className="voyageCardInformation">
-      <p className="voyageCardName">{props.name}</p>
-      <p className="voyageCardPays">{props.pays}</p>
+      <p className="voyageCardName">{nom}</p>
+      <p className="voyageCardPays">{pays}</p>
     </div>
-    {props.image && (
-      <Image
+    {image && (
+      <img
         className="voyageCardImage"
         width={250}
         height={250}
-        src={props.image}
-        alt={"Image de " + props.nom}
+        src={image}
+        alt={"Image de " + nom}
       />
     )}
   </div>

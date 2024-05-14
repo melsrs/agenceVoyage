@@ -16,7 +16,7 @@ export default function VoyageList(props) {
               <li>
                 <VoyageCardTeaser
                   nom={voyage.nom}
-                  pays={voyage.pays}
+                  pays={voyage.Pays.nom}
                   image={voyage.image}
                 />
               </li>
