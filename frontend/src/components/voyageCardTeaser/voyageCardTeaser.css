@@ -1,33 +1,33 @@
 .voyageCard {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: max-content;
+  height: max-content;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+
+  .voyageCardInformation {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: max-content;
-    height: max-content;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 20px;
+    gap: 10px;
 
-    .voyageCardInformation {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        .voyageCardName {
-            margin: 0;
-            padding: 0;
-            width: 250px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-weight: bold;
-            font-size: 32px;
-        }
-
-        .voyageCardPays {
-            margin: 0;
-            padding: 0;
-            font-size: 24px;
-        }
+    .voyageCardName {
+      margin: 0;
+      padding: 0;
+      width: 250px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 32px;
     }
+
+    .voyageCardPays {
+      margin: 0;
+      padding: 0;
+      font-size: 24px;
+    }
+  }
 }

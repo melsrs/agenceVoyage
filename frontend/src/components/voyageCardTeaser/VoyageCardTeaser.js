@@ -1,3 +1,5 @@
+"use client"
+
 import "./voyageCardTeaser.css";
 import Image from "next/image";
 
@@ -14,7 +16,7 @@ export default function VoyageCardTeaser(props) {
         width={250}
         height={250}
         src={props.image}
-        alt={"Image de " + props.name}
+        alt={"Image de " + props.nom}
       />
     )}
   </div>

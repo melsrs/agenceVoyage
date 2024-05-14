@@ -1,18 +1,23 @@
+"use client"
+
 import "./voyageList.css";
 import VoyageCardTeaser from "../voyageCardTeaser/VoyageCardTeaser.js";
+import Link from "next/link";
+
+
 
 export default function VoyageList(props) {
   return (
     <div>
       {props.voyages && (
         <ul className="voyageList">
-          {props.voyages.map((voyages, index) => (
-            <Link key={index} href={"/voyages/" + voyages.id}>
+          {props.voyages.map((voyage, index) => (
+            <Link key={index} href={"/voyages/" + voyage.id}>
               <li>
                 <VoyageCardTeaser
-                  name={voyages.nom}
-                  pays={voyages.pays}
-                  image={voyages.image}
+                  nom={voyage.nom}
+                  pays={voyage.pays}
+                  image={voyage.image}
                 />
               </li>
             </Link>
