@@ -16,7 +16,7 @@ class VoyageController extends AbstractController
     public function index(VoyageRepository $voyageRepository): Response
     {
         $voyages = $voyageRepository->findAll();
-        
+    
         return $this->json(data: $voyages, context: ['groups'=> 'api_voyages_index']);
     }
 
