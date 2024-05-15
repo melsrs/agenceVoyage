@@ -20,7 +20,7 @@ class Categorie
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['api_voyages_index', 'api_categories_index', 'api_categories_show'])]
+    #[Groups(['api_voyages_index', 'api_categories_index', 'api_categories_show', 'api_voyages_show'])]
     private ?string $nom = null;
 
     /**
