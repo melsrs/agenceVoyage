@@ -15,7 +15,7 @@ class Voyage
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['api_voyages_index','api_reservations_index'])]
+    #[Groups(['api_voyages_index','api_reservations_index', 'api_voyages_show'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
@@ -27,15 +27,15 @@ class Voyage
     private ?string $image = null;
 
     #[ORM\Column]
-    #[Groups(['api_voyages_index'])]
+    #[Groups(['api_voyages_index', 'api_voyages_show'])]
     private ?int $prix = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['api_voyages_index', 'api_voyage_date'])]
+    #[Groups(['api_voyages_index', 'api_voyages_show'])]
     private ?\DateTimeInterface $datedepart = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    #[Groups(['api_voyages_index', 'api_voyage_date'])]
+    #[Groups(['api_voyages_index', 'api_voyages_show'])]
     private ?\DateTimeInterface $datearrivee = null;
 
     #[ORM\Column(length: 255)]
@@ -43,7 +43,7 @@ class Voyage
     private ?string $description = null;
 
     #[ORM\Column(length: 100)]
-    #[Groups(['api_voyages_index'])]
+    #[Groups(['api_voyages_index', 'api_voyages_show'])]
     private ?string $moyentransport = null;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
@@ -51,7 +51,7 @@ class Voyage
     private ?Pays $Pays = null;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
-    #[Groups(['api_voyages_index'])]
+    #[Groups(['api_voyages_index', 'api_voyages_show'])]
     private ?Categorie $Categorie = null;
 
 
