@@ -4,8 +4,6 @@ import "./voyageList.css";
 import VoyageCardTeaser from "../voyageCardTeaser/VoyageCardTeaser.js";
 import Link from "next/link";
 
-
-
 export default function VoyageList(props) {
   return (
     <div>
@@ -20,7 +18,6 @@ export default function VoyageList(props) {
                   image={voyage.image}
                   prix={voyage.prix}
                   categorie={voyage.Categorie.nom}
-
                 />
               </li>
             </Link>

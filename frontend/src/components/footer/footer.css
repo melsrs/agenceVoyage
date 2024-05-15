@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  padding: 17px 20px;
+  margin: 40px 0 0 0;
+  height: 130px;
+  background-color: #FEADCA;
+}
+
+.logo {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black !important;
+  }
+
+
+li > a {
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+  color: black !important;
+}

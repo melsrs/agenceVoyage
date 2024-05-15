@@ -1,47 +1,52 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar/navbar.js";
 import VoyageDetail from "@/components/voyageDetail/VoyageDetail";
 
-export default function Voyages() {
-    // Initialisation des états pour gérer le chargement, les erreurs, et les données reçues.
+export default function Voyages(props) {
+  // Initialisation des états pour gérer le chargement, les erreurs, et les données reçues.
   const [loading, setLoading] = useState(true); // État de chargement des données.
-  const [error, setError] = useState(false); 
-  const [voyages, setVoyages] = useState(null); 
+  const [error, setError] = useState(false); // État pour capturer une éventuelle erreur lors du fetch.
+  const [voyages, setVoyages] = useState(null); // Stockage des données reçues du fetch.
 
   useEffect(() => {
-    // Déclenchement de la récupération des données de personnages au montage du composant.
-    try {
-      fetch("https://127.0.0.1:8000/api/voyage" + params.voyage.id)
-        .then((response) => response.json()) // Transformation de la réponse en JSON.
-        .then((data) => {
-          setLoading(false); 
-          setVoyages(data); 
-        });
-    } catch (error) {
-      setError(true);
-      setLoading(false); 
-    }
-  }, []); 
+    // Déclaration d'une fonction asynchrone pour récupérer les données.
+    const fetchVoyages = async () => {
+      try {
+        const response = await fetch("https://127.0.0.1:8000/api/voyage/" + props.params.voyageId);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setVoyages(data);
+        setLoading(false);
+      } catch (error) {
+        setError(true);
+        setLoading(false);
+      }
+    };
 
+    // Appel de la fonction asynchrone.
+    fetchVoyages();
+  }, [props.params.voyageId]); // Ajout de props.params.voyage.id comme dépendance pour éviter les avertissements.
 
   return (
     <main>
       <Navbar />
-      {loading && !error && <div>Données en cours de chargement !</div>}
+      {loading && !error && <div>Données en cours de chargement</div>}
       {!loading && !error && voyages && (
-      <VoyageDetail 
-      nom={voyages.nom} 
-      image={voyages.image}
-      prix={voyages.prix}
-      datedepart={voyages.datedepart}
-      datearrivee={voyages.datearrivee}
-      description={voyages.description}
-      moyentransport={voyages.moyentransport}
-      pays={voyages.Pays.nom}
-      categorie={voyages.Categorie.nom}
-      />
+        <VoyageDetail
+          nom={voyages.nom}
+          image={voyages.image}
+          prix={voyages.prix}
+          datedepart={voyages.datedepart}
+          datearrivee={voyages.datearrivee}
+          description={voyages.description}
+          moyentransport={voyages.moyentransport}
+          pays={voyages.Pays.nom}
+          categorie={voyages.Categorie.nom}
+        />
       )}
       {!loading && error && <div>Une erreur est survenue.</div>}
     </main>

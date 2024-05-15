@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/navbar/navbar.js";
 import VoyageList from "@/components/voyageList/VoyageList.js";
+import Footer from "@/components/footer/Footer";
 
 export default function Voyages() {
     // Initialisation des états pour gérer le chargement, les erreurs, et les données reçues.
@@ -29,9 +30,10 @@ export default function Voyages() {
   return (
     <main>
       <Navbar />
-      {loading && !error && <div>Données en cours de chargement !</div>}
+      {loading && !error && <div>Données en cours de chargement</div>}
       {!loading && !error && voyages && <VoyageList voyages={voyages} />}
       {!loading && error && <div>Une erreur est survenue.</div>}
+      <Footer />
     </main>
   );
 }
