@@ -1,7 +1,6 @@
 "use client"
 
 import "./voyageCardTeaser.css";
-import Image from "next/image";
 
 export default function VoyageCardTeaser({nom,pays,image, prix, categorie}) {
   return (
