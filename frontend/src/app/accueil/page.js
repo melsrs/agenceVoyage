@@ -2,11 +2,11 @@
 
 import Navbar from "@/components/navbar/navbar";
 
-export default function Contact() {
+export default function Accueil() {
   return (
     <>
       <Navbar />
-      <p>Page de Contact</p>
+      <p>Page d'accueil</p>
     </>
   );
 }

@@ -1,0 +1,24 @@
+.voyageTeaser{
+    display: flex;
+    margin: 80px;
+}
+
+.voyageCardImage{
+    border-radius: 7px;
+}
+
+.voyageNom {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.voyageDetail{
+    display: flex;
+    flex-direction: column;
+    margin: 80px;
+}
+
+.intitule{
+    margin: 0;
+    font-weight: bold;
+}
