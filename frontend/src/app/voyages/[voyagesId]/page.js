@@ -9,7 +9,7 @@ export default function Voyages(props) {
   const [loading, setLoading] = useState(true); // État de chargement des données.
   const [error, setError] = useState(false); // État pour capturer une éventuelle erreur lors du fetch.
   const [voyages, setVoyages] = useState(null); // Stockage des données reçues du fetch.
-console.log(props);
+
   useEffect(() => {
     // Déclaration d'une fonction asynchrone pour récupérer les données.
     const fetchVoyages = async () => {
