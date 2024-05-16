@@ -20,7 +20,7 @@ class VoyageController extends AbstractController
         return $this->json(data: $voyages, context: ['groups'=> 'api_voyages_index']);
     }
 
-    #[Route('/{nom}', name: 'show')]
+    #[Route('/{id}', name: 'show')]
     public function show(Voyage $voyage): Response
     {
         return $this->json(data: $voyage, context: ['groups' => 'api_voyages_show']);
