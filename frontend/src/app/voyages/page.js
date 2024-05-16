@@ -12,10 +12,9 @@ export default function Voyages() {
   const [voyages, setVoyages] = useState(null); 
 
   useEffect(() => {
-    // Déclenchement de la récupération des données de personnages au montage du composant.
     try {
       fetch("https://127.0.0.1:8000/api/voyages")
-        .then((response) => response.json()) // Transformation de la réponse en JSON.
+        .then((response) => response.json()) 
         .then((data) => {
           setLoading(false); 
           setVoyages(data); 
