@@ -36,7 +36,7 @@ class UserController extends AbstractController
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
-                    $form->get('password')->getData()   //le champs ou l'utilisateur entre son password
+                    $form->get('password')->getData()
                 )
             );
             $entityManager->persist($user);
