@@ -32,6 +32,15 @@ A la ligne 27 veuillez insérer les informations concernant votre base de donné
 
 ---
 
+### Données par défaut
+
+Voici les données d'un utilisateur administrateur par défaut vous permettant de vous connecter en backend : 
+
+        ID = melissa@soares.fr
+        MDP = 1234
+
+---
+
 ### Routes API 
 
 - `/api/categories` - GET - Renvoie les données de toutes les catégories
