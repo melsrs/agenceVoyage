@@ -32,6 +32,22 @@ A la ligne 27 veuillez insérer les informations concernant votre base de donné
 
 ---
 
+### Routes API 
+
+- `/api/categories` - GET - Renvoie les données de toutes les catégories
+-  `/api/categories/{nom}` - GET - Renvoie les données d'une seule catégorie
+
+- `/api/voyages`- GET - Renvoie les données de l'ensemble des voyages
+- `/api/voyage/{id}`- GET - Renvoie les données d'un seul voyage
+
+- `/api/pays` - GET - Renvoie les données de tous les pays
+- `/api/pays/{nom}` - GET - Renvoie les données d'un seul pays
+  
+- `/api/reservations` - GET - Renvoie données de toutes les réservations
+- `/api/reservation/new` - POST - Permet de récupérer les données du front
+
+---
+
 ### Technologies Utilisées
 - HTML/CSS
 - JavaScript
